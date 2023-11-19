@@ -1,5 +1,6 @@
 package jpabook.japshop;
 
+import jpabook.japshop.domain.Book;
 import jpabook.japshop.domain.Member;
 import jpabook.japshop.domain.Order;
 import jpabook.japshop.domain.OrderItem;
@@ -22,15 +23,6 @@ public class JpaMain {
         tx.begin();
 
         try {
-            Order order = new Order();
-            em.persist(order);
-
-            OrderItem orderItem = new OrderItem();
-            orderItem.setOrder(order);
-
-            em.persist(orderItem);
-
-            Member findMember = order.getMember();
 
             tx.commit();
         }catch (Exception e){
